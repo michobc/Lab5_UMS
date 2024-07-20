@@ -23,6 +23,20 @@ CanApplyToFrance is true.
 As a Plus: Add upload profile picture for the user NB: The DB needs update to support this
 feature save the files in wwwroot.
 
+### Commands Used:
+#### add / remove reference command:
+dotnet add reference ../LabSession5.Infrastructure/LabSession5.Infrastructure.csproj
+dotnet remove reference ../LabSession5.Infrastructure/LabSession5.Infrastructure.csproj
+
+### Dependencies installed:
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.EntityFrameworkCore.Design
+Npgsql.EntityFrameworkCore.PostgreSQL
+
+### Design patterns and logic:
+Mediator Dp: to reduce chaotic dependencies between objects.
+CQRS (Command and Query Responsibility Segregation): a pattern that separates read and update operations for a data store.
+
 
 # Michel BOU CHAHINE
 ## inmind.ai
