@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hmMZamHe+B0ceh6/QT/OsWQee41hAo4pYPfz6gSeIU7JSpkGz6DUUTPBIu6mMTETE/NOOPO+F1Gd7iTCRNKpnQ==",
+  "dgSpecHash": "RXpVA4YUWPfG15cnwf94oXsVEOmoKVcRvXI42Vg2AIOx4lLEPT0nlbMo2+2MtdpTDC32uhUqphzkYWw+fQYl+g==",
   "success": true,
   "projectFilePath": "/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/LabSession5.Application.csproj",
   "expectedPackageFiles": [
+    "/Users/michelbouchahine/.nuget/packages/automapper/12.0.0/automapper.12.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/mediatr/12.3.0/mediatr.12.3.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/microsoft.entityframeworkcore/8.0.4/microsoft.entityframeworkcore.8.0.4.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.4/microsoft.entityframeworkcore.abstractions.8.0.4.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.4/microsoft.entityframeworkcore.analyzers.8.0.4.nupkg.sha512",
