@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using LabSession5.API.Filters;
 using LabSession5.Application.Commands;
 using LabSession5.Application.Queries;
 using MediatR;
@@ -19,10 +20,11 @@ public class CoursesController : ControllerBase
     }
 
     [HttpPost]
+    [ServiceFilter(typeof(AdminOnlyFilter))]
     public async Task<IActionResult> CreateCourse([FromForm] AddCourse command)
     {
         var courseId = await _mediator.Send(command);
-        return CreatedAtAction(nameof(GetCourseById), new { id = courseId }, null);
+        return CreatedAtAction(nameof(GetCourseById), new { id = courseId }, courseId);
     }
 
     [HttpGet("{id}")]

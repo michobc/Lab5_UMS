@@ -37,6 +37,9 @@ Npgsql.EntityFrameworkCore.PostgreSQL
 Mediator Dp: to reduce chaotic dependencies between objects.
 CQRS (Command and Query Responsibility Segregation): a pattern that separates read and update operations for a data store.
 
+### Migrations and code-first:
+dotnet ef migrations add InitialCreate
+dotnet ef database update
 
 # Michel BOU CHAHINE
 ## inmind.ai

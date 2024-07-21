@@ -1,4 +1,5 @@
 using Asp.Versioning;
+using LabSession5.API.Filters;
 using LabSession5.Application.Queries;
 using LabSession5.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,9 @@ builder.Services.AddApiVersioning(options =>
     options.DefaultApiVersion = new ApiVersion(1, 0);
     options.ReportApiVersions = true;
 });
+
+// Register filters:
+builder.Services.AddScoped<AdminOnlyFilter>();
 
 // Add services to the container.
 builder.Services.AddControllers();
