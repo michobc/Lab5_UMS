@@ -12,5 +12,6 @@ public class UniversityProfile : Profile
         CreateMap<SessionTime, SessionTimeViewModel>();
         CreateMap<TeacherPerCourse, TeacherPerCourseViewModel>();
         CreateMap<TeacherPerCoursePerSessionTime, TeacherPerCoursePerSessionTimeViewModel>();
+        CreateMap<ClassEnrollment, ClassEnrollementViewModel>();
     }
 }
