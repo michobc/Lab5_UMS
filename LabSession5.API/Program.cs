@@ -28,7 +28,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Pro
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetCourseById).Assembly));
 
 // Register AutoMapper
-builder.Services.AddAutoMapper(typeof(CourseProfile).Assembly);
+builder.Services.AddAutoMapper(typeof(UniversityProfile).Assembly);
 
 // Add services to the container.
 builder.Services.AddControllers();
