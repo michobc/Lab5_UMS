@@ -13,3 +13,6 @@
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Persistence/obj/Debug/net8.0/LabSession5.Persistence.pdb
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Persistence/obj/Debug/net8.0/LabSession5.Persistence.genruntimeconfig.cache
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Persistence/obj/Debug/net8.0/ref/LabSession5.Persistence.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Persistence/bin/Debug/net8.0/LabSession5.Domain.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Persistence/bin/Debug/net8.0/LabSession5.Domain.pdb
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Persistence/obj/Debug/net8.0/LabSessi.EB2BF0F0.Up2Date

@@ -1,0 +1,13 @@
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/bin/Debug/net8.0/LabSession5.Domain.deps.json
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/bin/Debug/net8.0/LabSession5.Domain.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/bin/Debug/net8.0/LabSession5.Domain.pdb
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.csproj.AssemblyReference.cache
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.AssemblyInfoInputs.cache
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.AssemblyInfo.cs
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.csproj.CoreCompileInputs.cache
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.sourcelink.json
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/refint/LabSession5.Domain.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.pdb
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/ref/LabSession5.Domain.dll

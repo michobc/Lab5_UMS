@@ -1,3 +1,5 @@
+using System.Globalization;
+using System.Runtime.InteropServices.JavaScript;
 using LabSession5.Application.Commands;
 using LabSession5.Domain.Models;
 using LabSession5.Persistence.Data;
@@ -17,16 +19,17 @@ public class AddCourseHandler : IRequestHandler<AddCourse, long>
 
     public async Task<long> Handle(AddCourse request, CancellationToken cancellationToken)
     {
+        // Console.WriteLine("HEREEEEE : " + request.EnrolmentDateRange.LowerBound.ToString("yyyy-MM-ddTHH:mm:ss", CultureInfo.InvariantCulture));
         var course = new Course
         {
+            Id = request.Id,
             Name = request.Name,
             MaxStudentsNumber = request.MaxStudentsNumber,
-            EnrolmentDateRange = new NpgsqlRange<DateOnly>(request.EnrolmentDateRange.Value.LowerBound, request.EnrolmentDateRange.Value.UpperBound)
+            EnrolmentDateRange = new NpgsqlRange<DateTime>(request.EnrolmentDateRange.LowerBound, request.EnrolmentDateRange.UpperBound)
         };
-
         _context.Courses.Add(course);
         await _context.SaveChangesAsync(cancellationToken);
-
+        
         return course.Id;
     }
 }

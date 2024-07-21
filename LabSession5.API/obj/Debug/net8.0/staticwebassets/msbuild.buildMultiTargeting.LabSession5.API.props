@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/LabSession5.API.props" />
+</Project>

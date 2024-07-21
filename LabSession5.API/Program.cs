@@ -1,3 +1,5 @@
+using Asp.Versioning;
+using LabSession5.Application.Queries;
 using LabSession5.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,9 +12,18 @@ builder.Services.AddDbContext<UniversityContext>(options =>
 
 // Register MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly));
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetCourseById).Assembly));
 
 // Register AutoMapper
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+// Add API versioning
+builder.Services.AddApiVersioning(options =>
+{
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.ReportApiVersions = true;
+});
 
 // Add services to the container.
 builder.Services.AddControllers();
