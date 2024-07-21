@@ -1,5 +1,5 @@
 using Asp.Versioning;
-using LabSession5.API.Filters;
+using LabSession5.Application.Mappings;
 using LabSession5.Application.Queries;
 using LabSession5.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +16,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Pro
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetCourseById).Assembly));
 
 // Register AutoMapper
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddAutoMapper(typeof(CourseProfile).Assembly);
 
 // Add API versioning
 builder.Services.AddApiVersioning(options =>
@@ -25,9 +25,6 @@ builder.Services.AddApiVersioning(options =>
     options.DefaultApiVersion = new ApiVersion(1, 0);
     options.ReportApiVersions = true;
 });
-
-// Register filters:
-builder.Services.AddScoped<AdminOnlyFilter>();
 
 // Add services to the container.
 builder.Services.AddControllers();

@@ -19,6 +19,16 @@ public class AddCourseHandler : IRequestHandler<AddCourse, long>
 
     public async Task<long> Handle(AddCourse request, CancellationToken cancellationToken)
     {
+        Console.WriteLine(request.UserId);
+        User user = await _context.Users.FindAsync(request.UserId);
+        if (user == null)
+        {
+            throw new ArgumentException("Not a user");
+        }
+        if (user.RoleId != 1)
+        {
+            throw new Exception("Admins only can create courses");
+        }
         var course = new Course
         {
             Id = request.Id,

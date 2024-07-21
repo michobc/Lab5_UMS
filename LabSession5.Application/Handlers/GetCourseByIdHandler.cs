@@ -19,6 +19,7 @@ public class GetCourseByIdHandler: IRequestHandler<GetCourseById, CourseViewMode
 
     public async Task<CourseViewModel> Handle(GetCourseById request, CancellationToken cancellationToken)
     {
+        Console.WriteLine(request.Id);
         var course = await _context.Courses.FindAsync(request.Id);
         return _mapper.Map<CourseViewModel>(course);
     }
