@@ -20,6 +20,15 @@ public class RegisterTeacherToCourseHandler : IRequestHandler<RegisterTeacherToC
 
     public async Task<TeacherPerCourseViewModel> Handle(RegisterTeacherToCourse request, CancellationToken cancellationToken)
     {
+        User user = await _context.Users.FindAsync(request.TeacherId);
+        if (user == null)
+        {
+            throw new ArgumentException("No user found");
+        }
+        if (user.RoleId != 2)
+        {
+            throw new Exception("You're not a teacher");
+        }
         var teacherCourse = new TeacherPerCourse
         {
             TeacherId = request.TeacherId,

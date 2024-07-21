@@ -19,7 +19,6 @@ public class AddCourseHandler : IRequestHandler<AddCourse, long>
 
     public async Task<long> Handle(AddCourse request, CancellationToken cancellationToken)
     {
-        Console.WriteLine(request.UserId);
         User user = await _context.Users.FindAsync(request.UserId);
         if (user == null)
         {
