@@ -11,20 +11,24 @@ builder.Services.AddDbContext<UniversityContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+// Register API versioning
+var apiVersioningSettings = builder.Configuration.GetSection("ApiVersioning");
+var defaultApiVersion = new ApiVersion(apiVersioningSettings.GetValue<int>("MajorVersion"), apiVersioningSettings.GetValue<int>("MinorVersion"));
+var assumeDefaultVersionWhenUnspecified = apiVersioningSettings.GetValue<bool>("AssumeDefaultVersionWhenUnspecified");
+
+builder.Services.AddApiVersioning(options =>
+{
+    options.ReportApiVersions = true;
+    options.AssumeDefaultVersionWhenUnspecified = assumeDefaultVersionWhenUnspecified;
+    options.DefaultApiVersion = defaultApiVersion;
+});
+
 // Register MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly));
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetCourseById).Assembly));
 
 // Register AutoMapper
 builder.Services.AddAutoMapper(typeof(CourseProfile).Assembly);
-
-// Add API versioning
-builder.Services.AddApiVersioning(options =>
-{
-    options.AssumeDefaultVersionWhenUnspecified = true;
-    options.DefaultApiVersion = new ApiVersion(1, 0);
-    options.ReportApiVersions = true;
-});
 
 // Add services to the container.
 builder.Services.AddControllers();

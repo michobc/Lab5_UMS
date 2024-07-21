@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "F5MOEfnKzorVjMDyDxIHY5lRHmLmBu/wpvWi0Y+8F3DbOFli6hSUPCVSUjaoGsm+LAcDspboSMVHYpipYuXo0g==",
+  "dgSpecHash": "z828t5muYaWEKsVp+ANYJExgXXOqcW8PUWFMqIYvIAGnaP2Cm9dCWnwhaTiivAEWw2IcYMYPPQ8U8GCk4/EKbw==",
   "success": true,
   "projectFilePath": "/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/LabSession5.API.csproj",
   "expectedPackageFiles": [
     "/Users/michelbouchahine/.nuget/packages/asp.versioning.abstractions/8.1.0/asp.versioning.abstractions.8.1.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/asp.versioning.http/8.1.0/asp.versioning.http.8.1.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/asp.versioning.mvc/8.1.0/asp.versioning.mvc.8.1.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/asp.versioning.mvc.apiexplorer/8.1.0/asp.versioning.mvc.apiexplorer.8.1.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/automapper/12.0.0/automapper.12.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.0/automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/mediatr/12.3.0/mediatr.12.3.0.nupkg.sha512",

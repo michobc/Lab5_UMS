@@ -49,3 +49,4 @@
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/LabSession5.API.pdb
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/LabSession5.API.genruntimeconfig.cache
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/ref/LabSession5.API.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Asp.Versioning.Mvc.ApiExplorer.dll
