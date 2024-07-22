@@ -3,6 +3,7 @@ using LabSession5.Application.Commands;
 using LabSession5.Application.Handlers;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace LabSession5.API.Controllers;
 
@@ -12,10 +13,13 @@ namespace LabSession5.API.Controllers;
 public class TeachersController : ControllerBase
 {
     private readonly IMediator _mediator;
+    private readonly IMemoryCache _cache;
+    private readonly TimeSpan _cacheDuration = TimeSpan.FromMinutes(30);
 
-    public TeachersController(IMediator mediator)
+    public TeachersController(IMediator mediator, IMemoryCache cache)
     {
         _mediator = mediator;
+        _cache = cache;
     }
 
     [HttpPost("{teacherId}/courses/{courseId}")]

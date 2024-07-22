@@ -30,6 +30,9 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Get
 // Register AutoMapper
 builder.Services.AddAutoMapper(typeof(UniversityProfile).Assembly);
 
+// Register Caching
+builder.Services.AddMemoryCache();
+
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

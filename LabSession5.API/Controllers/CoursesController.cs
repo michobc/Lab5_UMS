@@ -1,8 +1,10 @@
 using Asp.Versioning;
 using LabSession5.Application.Commands;
 using LabSession5.Application.Queries;
+using LabSession5.Application.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace LabSession5.API.Controllers;
 
@@ -12,10 +14,13 @@ namespace LabSession5.API.Controllers;
 public class CoursesController : ControllerBase
 {
     private readonly IMediator _mediator;
+    private readonly IMemoryCache _cache;
+    private readonly TimeSpan _cacheDuration = TimeSpan.FromMinutes(30);
 
-    public CoursesController(IMediator mediator)
+    public CoursesController(IMediator mediator, IMemoryCache cache)
     {
         _mediator = mediator;
+        _cache = cache;
     }
 
     [HttpPost]
@@ -28,11 +33,18 @@ public class CoursesController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetCourseById(long id)
     {
-        var courseview = await _mediator.Send(new GetCourseById { Id = id });
-        if (courseview == null)
+        if (!_cache.TryGetValue($"Class_{id}", out CourseViewModel courseViewModel))
         {
-            return NotFound();
+            var courseview = await _mediator.Send(new GetCourseById { Id = id });
+            if (courseview == null)
+            {
+                return NotFound();
+            }
+            _cache.Set($"Class_{id}", courseview, _cacheDuration);
+            Console.WriteLine("added to cache");
+            return Ok(courseview);
         }
-        return Ok(courseview);
+        Console.WriteLine("got it from cache");
+        return Ok(courseViewModel);
     }
 }
