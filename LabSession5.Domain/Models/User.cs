@@ -1,4 +1,7 @@
-﻿namespace LabSession5.Domain.Models;
+﻿using System;
+using System.Collections.Generic;
+
+namespace LabSession5.Domain.Models;
 
 public partial class User
 {
@@ -12,7 +15,13 @@ public partial class User
 
     public string Email { get; set; } = null!;
 
+    public double GradeAverage { get; set; }
+
+    public bool CanApplyToFrance { get; set; }
+
     public virtual ICollection<ClassEnrollment> ClassEnrollments { get; set; } = new List<ClassEnrollment>();
+
+    public virtual ICollection<Grade> Grades { get; set; } = new List<Grade>();
 
     public virtual Role Role { get; set; } = null!;
 

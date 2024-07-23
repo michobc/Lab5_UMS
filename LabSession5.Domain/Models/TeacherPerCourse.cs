@@ -1,4 +1,6 @@
-﻿namespace LabSession5.Domain.Models;
+﻿
+
+namespace LabSession5.Domain.Models;
 
 public partial class TeacherPerCourse
 {
@@ -11,6 +13,8 @@ public partial class TeacherPerCourse
     public virtual ICollection<ClassEnrollment> ClassEnrollments { get; set; } = new List<ClassEnrollment>();
 
     public virtual Course Course { get; set; } = null!;
+
+    public virtual ICollection<Grade> Grades { get; set; } = new List<Grade>();
 
     public virtual User Teacher { get; set; } = null!;
 

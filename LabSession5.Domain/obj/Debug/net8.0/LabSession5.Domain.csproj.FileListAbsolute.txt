@@ -11,3 +11,5 @@
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/refint/LabSession5.Domain.dll
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.pdb
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/ref/LabSession5.Domain.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/bin/Debug/net8.0/LabSession5.Domain.runtimeconfig.json
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Domain/obj/Debug/net8.0/LabSession5.Domain.genruntimeconfig.cache
