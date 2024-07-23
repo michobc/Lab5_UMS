@@ -33,9 +33,8 @@ public class AddCourseHandler : IRequestHandler<AddCourse, long>
             Id = request.Id,
             Name = request.Name,
             MaxStudentsNumber = request.MaxStudentsNumber,
-            EnrolmentDateRange = new NpgsqlRange<DateTime>(DateTime.Parse(request.EnrolmentDateRangeLowerBound).ToUniversalTime(), DateTime.Parse(request.EnrolmentDateRangeUpperBound).ToUniversalTime())
+            EnrolmentDateRange = new NpgsqlRange<DateTime>(request.EnrolmentDateRangeLowerBound.ToUniversalTime(), request.EnrolmentDateRangeUpperBound.ToUniversalTime())
         };
-        Console.WriteLine("Course EnrolmentDateRange: " + course.Name);
         
         _context.Courses.Add(course);
         await _context.SaveChangesAsync(cancellationToken);

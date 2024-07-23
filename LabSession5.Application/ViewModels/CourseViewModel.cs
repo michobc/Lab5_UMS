@@ -10,5 +10,7 @@ public class CourseViewModel
 
     public int? MaxStudentsNumber { get; set; }
 
-    public NpgsqlRange<DateTime>? EnrolmentDateRange { get; set; }
+    public DateTime EnrolmentDateRangeLowerBound { get; set; }
+    
+    public DateTime EnrolmentDateRangeUpperBound { get; set; }
 }

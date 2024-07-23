@@ -14,13 +14,10 @@ namespace LabSession5.API.Controllers;
 public class CoursesController : ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly IMemoryCache _cache;
-    private readonly TimeSpan _cacheDuration = TimeSpan.FromMinutes(30);
 
-    public CoursesController(IMediator mediator, IMemoryCache cache)
+    public CoursesController(IMediator mediator)
     {
         _mediator = mediator;
-        _cache = cache;
     }
 
     [HttpPost]
@@ -33,18 +30,14 @@ public class CoursesController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> GetCourseById(long id)
     {
-        if (!_cache.TryGetValue($"Class_{id}", out CourseViewModel courseViewModel))
+        try
         {
             var courseview = await _mediator.Send(new GetCourseById { Id = id });
-            if (courseview == null)
-            {
-                return NotFound();
-            }
-            _cache.Set($"Class_{id}", courseview, _cacheDuration);
-            Console.WriteLine("added to cache");
             return Ok(courseview);
         }
-        Console.WriteLine("got it from cache");
-        return Ok(courseViewModel);
+        catch (Exception e)
+        {
+            return NotFound(e.Message);
+        }
     }
 }
