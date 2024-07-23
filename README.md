@@ -48,5 +48,10 @@ Exceptions handled:
 - not enrolled in the class given,
 => Teacher will specify the coeficient of the grade, the handler will calculate the given value on 20 and add it to the average on 20.
 
+Chain of 3 Handlers:
+- set grade check student and class,
+- update average
+- check if can apply for france
+
 # Michel BOU CHAHINE
 ## inmind.ai
