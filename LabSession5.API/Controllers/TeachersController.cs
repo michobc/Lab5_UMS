@@ -1,6 +1,7 @@
 using Asp.Versioning;
 using LabSession5.Application.Commands;
 using LabSession5.Application.Handlers;
+using LabSession5.Application.Services;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -13,13 +14,12 @@ namespace LabSession5.API.Controllers;
 public class TeachersController : ControllerBase
 {
     private readonly IMediator _mediator;
-    private readonly IMemoryCache _cache;
-    private readonly TimeSpan _cacheDuration = TimeSpan.FromMinutes(30);
+    private readonly GradeService _gradeService;
 
-    public TeachersController(IMediator mediator, IMemoryCache cache)
+    public TeachersController(IMediator mediator, GradeService gradeService)
     {
         _mediator = mediator;
-        _cache = cache;
+        _gradeService = gradeService;
     }
 
     [HttpPost("{teacherId}/courses/{courseId}")]
@@ -43,5 +43,19 @@ public class TeachersController : ControllerBase
         var command = new RegisterTeacherCourseToSessionTime { TeacherPerCourseId = teacherPerCourseId, SessionTimeId = sessionTimeId };
         await _mediator.Send(command);
         return Ok(command);
+    }
+    
+    [HttpPost("setGrade")]
+    public async Task<IActionResult> SetGrade([FromForm] GradeCommand request)
+    {
+        try
+        {
+            await _gradeService.SetGradeAsync(request);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 }

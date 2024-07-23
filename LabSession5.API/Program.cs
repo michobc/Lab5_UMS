@@ -1,6 +1,7 @@
 using Asp.Versioning;
 using LabSession5.Application.Mappings;
 using LabSession5.Application.Queries;
+using LabSession5.Application.Services;
 using LabSession5.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,9 @@ builder.Services.AddDbContext<UniversityContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+// Register Services
+builder.Services.AddTransient<GradeService>();
 
 // Register API versioning
 var apiVersioningSettings = builder.Configuration.GetSection("ApiVersioning");

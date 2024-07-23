@@ -41,5 +41,12 @@ CQRS (Command and Query Responsibility Segregation): a pattern that separates re
 dotnet ef migrations add InitialCreate
 dotnet ef database update
 
+### Teacher Grade Student enrolled in specific class:
+Using Chain of Responsibility, I implemented this feature adding exceptions and throwing logical errors:
+Exceptions handled:
+- not a student,
+- not enrolled in the class given,
+=> Teacher will specify the coeficient of the grade, the handler will calculate the given value on 20 and add it to the average on 20.
+
 # Michel BOU CHAHINE
 ## inmind.ai

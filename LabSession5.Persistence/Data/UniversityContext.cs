@@ -20,6 +20,8 @@ public partial class UniversityContext : DbContext
 
     public virtual DbSet<Course> Courses { get; set; }
 
+    public virtual DbSet<Grade> Grades { get; set; }
+
     public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<SessionTime> SessionTimes { get; set; }
@@ -65,6 +67,25 @@ public partial class UniversityContext : DbContext
             entity.HasIndex(e => e.Name, "courses_\"name\"_uindex").IsUnique();
 
             entity.HasIndex(e => e.Id, "courses_id_uindex").IsUnique();
+        });
+
+        modelBuilder.Entity<Grade>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("Grades_pkey");
+
+            entity.HasIndex(e => e.Id, "grades_id_uindex").IsUnique();
+
+            entity.Property(e => e.Id).HasDefaultValueSql("nextval('\"Grades_id_seq\"'::regclass)");
+
+            entity.HasOne(d => d.Class).WithMany(p => p.Grades)
+                .HasForeignKey(d => d.ClassId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasConstraintName("grades_class_id_fk");
+
+            entity.HasOne(d => d.Student).WithMany(p => p.Grades)
+                .HasForeignKey(d => d.StudentId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasConstraintName("grades_student_id_fk");
         });
 
         modelBuilder.Entity<Role>(entity =>
@@ -145,6 +166,7 @@ public partial class UniversityContext : DbContext
             entity.HasIndex(e => e.Id, "users_\"id\"_uindex").IsUnique();
 
             entity.Property(e => e.Id).HasDefaultValueSql("nextval('\"Users_id_seq\"'::regclass)");
+            entity.Property(e => e.CanApplyToFrance).HasDefaultValue(false);
             entity.Property(e => e.Name).HasColumnType("character varying");
             entity.Property(e => e.RoleId).ValueGeneratedOnAdd();
 
