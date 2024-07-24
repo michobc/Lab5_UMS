@@ -1,9 +1,14 @@
+using System.Net;
+using System.Net.Mail;
 using Asp.Versioning;
+using Hangfire;
+using Hangfire.PostgreSql;
 using HealthChecks.Network.Core;
 using HealthChecks.UI.Client;
 using LabSession5.Application.Mappings;
 using LabSession5.Application.Queries;
 using LabSession5.Application.Services;
+using LabSession5.Infrastructure.Services;
 using LabSession5.Persistence.Data;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
@@ -57,6 +62,24 @@ builder.Services.AddHealthChecks()
 builder.Services.AddHealthChecksUI()
     .AddInMemoryStorage();
 
+// Register Hangfire
+builder.Services.AddHangfire(config =>
+    config.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+        .UseSimpleAssemblyNameTypeSerializer()
+        .UseRecommendedSerializerSettings()
+        .UsePostgreSqlStorage(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddHangfireServer();
+
+builder.Services.AddSingleton<SmtpClient>(_ =>
+{
+    var client = new SmtpClient(builder.Configuration["Smtp:Host"], int.Parse(builder.Configuration["Smtp:Port"]));
+    client.UseDefaultCredentials = false;
+    client.Credentials = new NetworkCredential(builder.Configuration["Smtp:User"], builder.Configuration["Smtp:Pass"]);
+    return client;
+});
+builder.Services.AddTransient<EmailNotificationService>();
+
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -91,5 +114,11 @@ app.MapHealthChecksUI(setup =>
     setup.UIPath = "/health-ui";
     setup.ApiPath = "/health-ui-api";
 });
+
+app.UseHangfireDashboard();
+
+RecurringJob.AddOrUpdate<EmailNotificationService>(service => 
+        service.SendEmailAsync("serge@example.inmind.com", "Scheduled Email", "This is a scheduled email, every one minute you will receive it, good luck"), 
+    "0 */5 * * * *"); // Every 5 minutes
 
 app.Run();

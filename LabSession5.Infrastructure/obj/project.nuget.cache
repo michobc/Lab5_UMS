@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "k4faeyL7I4IV/TavY9jtFpYgsk/JYgCr1usy2OVs9EVY+Y0YMor4jfI2yHXAdMz5SGZQOxT/VBi6inbVGMyoMA==",
+  "dgSpecHash": "xuU/VuVwxMKCXk5GPn34btdLYkCYCBz3yvWoG09/zJvVjLkOr+2yHVnaOEQ2veJ4cLS8sVrnRs+AYxYfJKeBbw==",
   "success": true,
   "projectFilePath": "/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Infrastructure/LabSession5.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.1/microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.1/microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

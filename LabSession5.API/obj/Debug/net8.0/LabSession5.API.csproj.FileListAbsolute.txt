@@ -142,3 +142,14 @@
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/HealthChecks.UI.InMemory.Storage.dll
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/HealthChecks.Uris.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Dapper.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Hangfire.AspNetCore.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Hangfire.Core.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Hangfire.NetCore.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Hangfire.PostgreSql.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Hangfire.SqlServer.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/LabSession5.Infrastructure.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/LabSession5.Infrastructure.pdb

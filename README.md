@@ -76,5 +76,8 @@ command : docker run --rm -it -p 3000:80 -p 2525:25 rnwood/smtp4dev:v3
 open source fake smtp server for testing purposes
 https://mailosaur.com/blog/setting-up-a-fake-smtp-server-for-testing
 
+### Background Jobs schedule email notification:
+![alt text](images/im3.png)
+
 # Michel BOU CHAHINE
 ## inmind.ai

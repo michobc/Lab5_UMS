@@ -18,6 +18,8 @@
         <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="8.0.1" />
         <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="8.0.1" />
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+        <PackageReference Include="Hangfire" Version="1.8.14" />
+        <PackageReference Include="Hangfire.PostgreSql" Version="1.20.9" />
         <PackageReference Include="MediatR" Version="12.3.0" />
         <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks" Version="8.0.1" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
@@ -27,6 +29,7 @@
     <ItemGroup>
       <ProjectReference Include="..\LabSession5.Persistence\LabSession5.Persistence.csproj" />
       <ProjectReference Include="..\LabSession5.Application\LabSession5.Application.csproj" />
+      <ProjectReference Include="..\LabSession5.Infrastructure\LabSession5.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
