@@ -53,5 +53,21 @@ Chain of 3 Handlers:
 - update average
 - check if can apply for france
 
+### Required packages for Health check:
+- Microsoft.Extensions.Diagnostics.HealthChecks 
+- AspNetCore.HealthChecks.Npgsql
+- AspNetCore.HealthChecks.Network
+- AspNetCore.HealthChecks.UI
+- AspNetCore.HealthChecks.UI.InMemory.Storage
+- AspNetCore.HealthChecks.UI.Client
+- AspNetCore.HealthChecks.UI.Data
+- AspNetCore.HealthChecks.UI.Core
+- AspNetCore.HealthChecks.Uris
+
+## SMTP TESTING (smtp4dev):
+command : docker run --rm -it -p 3000:80 -p 2525:25 rnwood/smtp4dev:v3
+open source fake smtp server for testing purposes
+https://mailosaur.com/blog/setting-up-a-fake-smtp-server-for-testing
+
 # Michel BOU CHAHINE
 ## inmind.ai

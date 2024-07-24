@@ -1,8 +1,11 @@
 using Asp.Versioning;
+using HealthChecks.Network.Core;
+using HealthChecks.UI.Client;
 using LabSession5.Application.Mappings;
 using LabSession5.Application.Queries;
 using LabSession5.Application.Services;
 using LabSession5.Persistence.Data;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -37,6 +40,23 @@ builder.Services.AddAutoMapper(typeof(UniversityProfile).Assembly);
 // Register Caching
 builder.Services.AddMemoryCache();
 
+// Register Health Checks
+builder.Services.AddHealthChecks()
+    .AddNpgSql(builder.Configuration.GetConnectionString("DefaultConnection"))
+    .AddSmtpHealthCheck(options =>
+    {
+        options.Host = builder.Configuration["Smtp:Host"];
+        options.Port = int.Parse(builder.Configuration["Smtp:Port"]);
+        options.ConnectionType = SmtpConnectionType.PLAIN; // No STARTTLS
+        options.AllowInvalidRemoteCertificates = true;
+        options.LoginWith(builder.Configuration["Smtp:User"], builder.Configuration["Smtp:Pass"]);
+    }, name: "smtp")
+    .AddUrlGroup(new Uri("https://google.com"), name: "google URL");
+
+// Register HealthChecks UI
+builder.Services.AddHealthChecksUI()
+    .AddInMemoryStorage();
+
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
@@ -58,5 +78,18 @@ app.UseAuthorization();
 app.UseStaticFiles();
 
 app.MapControllers();
+
+// Map Health Check endpoints
+app.MapHealthChecks("/health", new HealthCheckOptions
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+
+app.MapHealthChecksUI(setup =>
+{
+    setup.UIPath = "/health-ui";
+    setup.ApiPath = "/health-ui-api";
+});
 
 app.Run();

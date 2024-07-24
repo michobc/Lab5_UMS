@@ -1,9 +1,3 @@
-/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.csproj.AssemblyReference.cache
-/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.GeneratedMSBuildEditorConfig.editorconfig
-/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.AssemblyInfoInputs.cache
-/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.AssemblyInfo.cs
-/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.csproj.CoreCompileInputs.cache
-/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.sourcelink.json
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/bin/Debug/net8.0/LabSession5.Application.deps.json
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/bin/Debug/net8.0/LabSession5.Application.dll
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/bin/Debug/net8.0/LabSession5.Application.pdb
@@ -11,6 +5,12 @@
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/bin/Debug/net8.0/LabSession5.Persistence.dll
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/bin/Debug/net8.0/LabSession5.Persistence.pdb
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/bin/Debug/net8.0/LabSession5.Domain.pdb
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.csproj.AssemblyReference.cache
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.AssemblyInfoInputs.cache
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.AssemblyInfo.cs
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.csproj.CoreCompileInputs.cache
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.sourcelink.json
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSessi.CE357C72.Up2Date
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.dll
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/refint/LabSession5.Application.dll
