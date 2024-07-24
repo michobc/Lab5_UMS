@@ -79,5 +79,10 @@ https://mailosaur.com/blog/setting-up-a-fake-smtp-server-for-testing
 ### Background Jobs schedule email notification:
 ![alt text](images/im3.png)
 
+### Serilog : logging to mongodb:
+packages:
+- Serilog.AspNetCore
+- Serilog.Sinks.MongoDB
+
 # Michel BOU CHAHINE
 ## inmind.ai

@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[8.1.0, )"
             },
+            "AspNetCore.HealthChecks.MongoDb": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "AspNetCore.HealthChecks.Network": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -111,6 +115,14 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Serilog.Sinks.MongoDB": {
+              "target": "Package",
+              "version": "[5.4.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

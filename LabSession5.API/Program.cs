@@ -14,6 +14,7 @@ using LabSession5.Persistence.Data;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,15 @@ builder.Services.AddApiVersioning(options =>
     options.DefaultApiVersion = defaultApiVersion;
 });
 
+// Configure Serilog
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.MongoDB(databaseUrl: builder.Configuration.GetConnectionString("MongoDBConnection"),
+        collectionName: "logs")
+    .CreateLogger();
+
+builder.Host.UseSerilog();
+
 // Register MediatR
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly));
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(GetCourseById).Assembly));
@@ -61,7 +71,10 @@ builder.Services.AddHealthChecks()
         options.AllowInvalidRemoteCertificates = true;
         options.LoginWith(builder.Configuration["Smtp:User"], builder.Configuration["Smtp:Pass"]);
     }, name: "smtp")
-    .AddUrlGroup(new Uri("https://google.com"), name: "google URL");
+    .AddUrlGroup(new Uri("https://google.com"), name: "google URL")
+    .AddMongoDb(mongodbConnectionString: builder.Configuration.GetConnectionString("MongoDBConnection"),
+        name: "mongodb"
+        );
 
 // Register HealthChecks UI
 builder.Services.AddHealthChecksUI()

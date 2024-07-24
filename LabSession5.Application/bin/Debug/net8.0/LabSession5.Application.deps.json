@@ -16,17 +16,6 @@
         },
         "runtime": {
           "LabSession5.Application.dll": {}
-        },
-        "resources": {
-          "de/LabSession5.Application.resources.dll": {
-            "locale": "de"
-          },
-          "en/LabSession5.Application.resources.dll": {
-            "locale": "en"
-          },
-          "fr/LabSession5.Application.resources.dll": {
-            "locale": "fr"
-          }
         }
       },
       "AutoMapper/12.0.0": {
