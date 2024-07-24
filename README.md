@@ -84,5 +84,7 @@ packages:
 - Serilog.AspNetCore
 - Serilog.Sinks.MongoDB
 
+![alt text](images/im4.png)
+
 # Michel BOU CHAHINE
 ## inmind.ai
