@@ -64,8 +64,15 @@ Chain of 3 Handlers:
 - AspNetCore.HealthChecks.UI.Core
 - AspNetCore.HealthChecks.Uris
 
+![alt text](images/im2.png)
+
 ## SMTP TESTING (smtp4dev):
+link: http://localhost:3000
+
+![alt text](images/im1.png)
+
 command : docker run --rm -it -p 3000:80 -p 2525:25 rnwood/smtp4dev:v3
+
 open source fake smtp server for testing purposes
 https://mailosaur.com/blog/setting-up-a-fake-smtp-server-for-testing
 
