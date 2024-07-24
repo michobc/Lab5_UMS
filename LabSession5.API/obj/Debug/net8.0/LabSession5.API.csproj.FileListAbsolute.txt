@@ -153,3 +153,16 @@
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/Newtonsoft.Json.dll
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/LabSession5.Infrastructure.dll
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/LabSession5.Infrastructure.pdb
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/de/LabSession5.API.resources.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/en/LabSession5.API.resources.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/bin/Debug/net8.0/fr/LabSession5.API.resources.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/LabSession5.API.csproj.GenerateResource.cache
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/de/LabSession5.API.resources.cs
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/de/LabSession5.API.resources.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/en/LabSession5.API.resources.cs
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/en/LabSession5.API.resources.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/fr/LabSession5.API.resources.cs
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/fr/LabSession5.API.resources.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/LabSession5.API.Resources.Controllers.HelloController.de.resources
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/LabSession5.API.Resources.Controllers.HelloController.en.resources
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.API/obj/Debug/net8.0/LabSession5.API.Resources.Controllers.HelloController.fr.resources

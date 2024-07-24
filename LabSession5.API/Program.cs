@@ -1,3 +1,4 @@
+using System.Globalization;
 using System.Net;
 using System.Net.Mail;
 using Asp.Versioning;
@@ -11,6 +12,7 @@ using LabSession5.Application.Services;
 using LabSession5.Infrastructure.Services;
 using LabSession5.Persistence.Data;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,6 +24,9 @@ builder.Services.AddDbContext<UniversityContext>(options =>
 
 // Register Services
 builder.Services.AddTransient<GradeService>();
+
+// Configure localization
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 // Register API versioning
 var apiVersioningSettings = builder.Configuration.GetSection("ApiVersioning");
@@ -99,6 +104,15 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseStaticFiles();
+
+app.UseDeveloperExceptionPage();
+
+app.UseRequestLocalization(new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture("en"),
+    SupportedCultures = new List<CultureInfo> { new CultureInfo("en"), new CultureInfo("fr"), new CultureInfo("de") },
+    SupportedUICultures = new List<CultureInfo> { new CultureInfo("en"), new CultureInfo("fr"), new CultureInfo("de") }
+});
 
 app.MapControllers();
 

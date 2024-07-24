@@ -31,6 +31,17 @@
         },
         "runtime": {
           "LabSession5.API.dll": {}
+        },
+        "resources": {
+          "de/LabSession5.API.resources.dll": {
+            "locale": "de"
+          },
+          "en/LabSession5.API.resources.dll": {
+            "locale": "en"
+          },
+          "fr/LabSession5.API.resources.dll": {
+            "locale": "fr"
+          }
         }
       },
       "Asp.Versioning.Abstractions/8.1.0": {
