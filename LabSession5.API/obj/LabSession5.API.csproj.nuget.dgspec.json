@@ -174,6 +174,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Infrastructure/LabSession5.Infrastructure.csproj": {
+                "projectPath": "/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Infrastructure/LabSession5.Infrastructure.csproj"
+              },
               "/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Persistence/LabSession5.Persistence.csproj": {
                 "projectPath": "/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Persistence/LabSession5.Persistence.csproj"
               }
@@ -201,6 +204,10 @@
             "MediatR.Contracts": {
               "target": "Package",
               "version": "[2.0.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Npgsql": {
               "target": "Package",
@@ -326,9 +333,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.Extensions.Logging.Abstractions": {
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.8.1, )"
             }
           },
           "imports": [

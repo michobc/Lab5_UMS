@@ -16,3 +16,5 @@
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/refint/LabSession5.Application.dll
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/LabSession5.Application.pdb
 /Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/obj/Debug/net8.0/ref/LabSession5.Application.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/bin/Debug/net8.0/LabSession5.Infrastructure.dll
+/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Application/bin/Debug/net8.0/LabSession5.Infrastructure.pdb

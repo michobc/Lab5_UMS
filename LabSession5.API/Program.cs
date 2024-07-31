@@ -25,6 +25,8 @@ builder.Services.AddDbContext<UniversityContext>(options =>
 
 // Register Services
 builder.Services.AddTransient<GradeService>();
+// Register RabbitMQ service
+builder.Services.AddSingleton<RabbitMqService>();
 
 // Configure localization
 builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");

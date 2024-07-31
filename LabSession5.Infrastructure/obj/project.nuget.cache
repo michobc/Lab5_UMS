@@ -1,11 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "xuU/VuVwxMKCXk5GPn34btdLYkCYCBz3yvWoG09/zJvVjLkOr+2yHVnaOEQ2veJ4cLS8sVrnRs+AYxYfJKeBbw==",
+  "dgSpecHash": "I0y2aIQr+1rwIvAUzex4IVpMEF6Dzn+lX0R4Zt5LnxuQdRs9M5ErReVtDZROKUXyGBtcHdMek2vqWAcgjf2HrQ==",
   "success": true,
   "projectFilePath": "/Users/michelbouchahine/RiderProjects/LabSession5/LabSession5.Infrastructure/LabSession5.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.1/microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
-    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.1/microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512"
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.1/microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/rabbitmq.client/6.8.1/rabbitmq.client.6.8.1.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
+    "/Users/michelbouchahine/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
   ],
   "logs": []
 }

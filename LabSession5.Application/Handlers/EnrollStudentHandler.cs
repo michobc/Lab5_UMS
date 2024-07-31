@@ -1,10 +1,14 @@
+using System.Text;
 using AutoMapper;
 using LabSession5.Application.Commands;
 using LabSession5.Application.ViewModels;
 using LabSession5.Domain.Models;
+using LabSession5.Infrastructure.Services;
 using LabSession5.Persistence.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using RabbitMQ.Client;
 
 namespace LabSession5.Application.Handlers;
 
@@ -12,11 +16,13 @@ public class EnrollStudentHandler : IRequestHandler<EnrollStudent, ClassEnrollem
 {
     private readonly UniversityContext _context;
     private readonly IMapper _mapper;
+    private readonly RabbitMqService _rabbitMqService;
 
-    public EnrollStudentHandler(UniversityContext context, IMapper mapper)
+    public EnrollStudentHandler(UniversityContext context, IMapper mapper, RabbitMqService rabbitMqService)
     {
         _context = context;
         _mapper = mapper;
+        _rabbitMqService = rabbitMqService;
     }
 
     public async Task<ClassEnrollementViewModel> Handle(EnrollStudent request, CancellationToken cancellationToken)
@@ -31,14 +37,20 @@ public class EnrollStudentHandler : IRequestHandler<EnrollStudent, ClassEnrollem
             throw new Exception("You're not a student");
         }
         
-        // Retrieve the course
-        var course = await _context.Courses
-            .FirstOrDefaultAsync(c => c.Id == request.CourseId, cancellationToken);
-
-        if (course == null)
+        // Retrieve the class
+        var myclass = await _context.TeacherPerCourses
+            .FirstOrDefaultAsync(t => t.Id == request.ClassId, cancellationToken);
+        
+        if (myclass == null)
         {
-            throw new Exception("Course not found");
+            throw new Exception("Class not found");
         }
+        
+        var course = await _context.Courses
+            .FirstOrDefaultAsync(c => c.Id == myclass.CourseId, cancellationToken);
+
+        var teacher = await _context.Users
+            .FirstOrDefaultAsync(t => t.Id == myclass.TeacherId, cancellationToken);
 
         // Check if the current date is within the allowed enrollment date range
         var now = DateTime.UtcNow;
@@ -46,17 +58,14 @@ public class EnrollStudentHandler : IRequestHandler<EnrollStudent, ClassEnrollem
         {
             throw new Exception("Enrollment is not allowed passed due.");
         }
-
-        var myclass = await _context.TeacherPerCourses
-            .FirstOrDefaultAsync(t => t.CourseId == request.CourseId, cancellationToken);
         
         // Check if the student is already enrolled in the class
         var isAlreadyEnrolled = await _context.ClassEnrollments
             .AnyAsync(ce => ce.StudentId == request.StudentId && ce.ClassId == myclass.Id, cancellationToken);
-
+        
         if (isAlreadyEnrolled)
         {
-            throw new Exception("Student is already enrolled in this course.");
+            throw new Exception("Student is already enrolled in this class.");
         }
 
         // Add the enrollment
@@ -68,6 +77,29 @@ public class EnrollStudentHandler : IRequestHandler<EnrollStudent, ClassEnrollem
     
         _context.ClassEnrollments.Add(enrollment);
         await _context.SaveChangesAsync(cancellationToken);
+        
+        // Publish message to RabbitMQ
+        var channel = _rabbitMqService.GetChannel();
+        if (channel == null)
+        {
+            throw new Exception("RabbitMQ channel is not initialized.");
+        }
+
+        var message = JsonConvert.SerializeObject(new
+        {
+            enrollment.Id,
+            enrollment.ClassId,
+            enrollment.StudentId,
+            StudentName = user.Name,
+            CourseName = course.Name,
+            TeacherName = teacher.Name
+        });
+
+        var body = Encoding.UTF8.GetBytes(message);
+        channel.BasicPublish(exchange: "",
+            routingKey: "class_updates",
+            basicProperties: null,
+            body: body);
 
         return _mapper.Map<ClassEnrollementViewModel>(enrollment);
     }

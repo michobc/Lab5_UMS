@@ -8,5 +8,5 @@ public class EnrollStudent : IRequest<ClassEnrollementViewModel>
 {
     public long Id { get; set; }
     public long StudentId { get; set; }
-    public long CourseId { get; set; }
+    public long ClassId { get; set; }
 }
