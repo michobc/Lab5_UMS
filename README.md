@@ -86,5 +86,8 @@ packages:
 
 ![alt text](images/im4.png)
 
+### RabbitMQ:
+![alt text](images/im5.png)
+
 # Michel BOU CHAHINE
 ## inmind.ai
